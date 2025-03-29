@@ -34,6 +34,6 @@ namespace PF2E_Project.CharacterBuildingBlocks
                     return "Invalid Proficiency Bonus";
             }
         }
-        public static char ProficiencyBonusInitial(ProficiencyBonusValue PB) { return ProficiencyBonusName(PB)[1]; }
+        public static char ProficiencyBonusInitial(ProficiencyBonusValue PB) => ProficiencyBonusName(PB)[0];
     }
 }

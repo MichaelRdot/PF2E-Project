@@ -12,26 +12,22 @@ namespace PF2E_Project.CharacterBuildingBlocks
     class Skill
     {
         private string skillName;
-        private int skillValue;
+        private sbyte skillValue;
         private ProficiencyBonusValue proficiencyBonus;
-        public Skill()
-        {
-            skillName = "N/A";
-            skillValue = 0;
-            proficiencyBonus = 0;
-        }
-
-        public Skill(string skillName, int skillValue, ProficiencyBonusValue proficiencyBonus)
+        private Attribute skillAttribute;
+        public Skill(string skillName, ProficiencyBonusValue proficiencyBonus, Attribute skillAttribute)
         {
             this.skillName = skillName;
-            this.skillValue = skillValue;
             this.proficiencyBonus = proficiencyBonus;
+            this.skillAttribute = skillAttribute;
+            this.skillValue = (sbyte) (skillAttribute.GetAttributeModifier() + (byte)proficiencyBonus);
         }
 
-        public string GetSkillName() { return skillName; }
-        public int GetSkillValue() { return skillValue; }
-        public int GetProficiencyBonusValue() { return (int)proficiencyBonus; }
-        public string GetProficiencyBonusName() { return ProficiencyBonus.ProficiencyBonusName(proficiencyBonus); }
-        public char GetProficiencyBonusInitial() { return ProficiencyBonus.ProficiencyBonusInitial(proficiencyBonus); }
+        public string GetSkillName() => skillName; 
+        public sbyte GetSkillValue() => skillValue;
+        public byte GetProficiencyBonusValue() => (byte)proficiencyBonus; 
+        public string GetProficiencyBonusName() => ProficiencyBonus.ProficiencyBonusName(proficiencyBonus);
+        public char GetProficiencyBonusInitial() => ProficiencyBonus.ProficiencyBonusInitial(proficiencyBonus);
+        public Attribute GetSkillAttribute() => skillAttribute;
     }
 }
