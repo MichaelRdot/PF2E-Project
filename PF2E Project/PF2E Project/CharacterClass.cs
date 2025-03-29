@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using PF2E_Project;
 using PF2E_Project.CharacterBuildingBlocks;
-public static class CharacterClass()
+public class CharacterClass()
 {
     private int strValue = 10;
     private int 
