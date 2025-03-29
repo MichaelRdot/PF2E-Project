@@ -20,5 +20,10 @@ namespace PF2E_Project
         {
             InitializeComponent();
         }
+
+        public CreateCharacterButton()
+        {
+            CreateCharacter();
+        }
     }
 }
