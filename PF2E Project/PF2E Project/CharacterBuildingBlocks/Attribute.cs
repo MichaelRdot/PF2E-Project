@@ -11,8 +11,8 @@ namespace PF2E_Project.CharacterBuildingBlocks
     {
         private string AttributeName;
         private string AttributeShortHand;
-        private sbyte AttributeValue;
-        public Attribute(string AttributeName,string AttributeShortHand, sbyte AttributeValue)
+        private byte AttributeValue;
+        public Attribute(string AttributeName,string AttributeShortHand, byte AttributeValue)
         {
             this.AttributeName = AttributeName;
             this.AttributeShortHand = AttributeShortHand;
@@ -21,6 +21,6 @@ namespace PF2E_Project.CharacterBuildingBlocks
         public sbyte GetAttributeModifier() => (sbyte) (Math.Floor((double)AttributeValue / 2) - 5);
         public string GetAttributeName() => AttributeName;
         public string GetAttributShortHand() => AttributeShortHand;
-        public sbyte GetAttributeValue() => AttributeValue;
+        public byte GetAttributeValue() => AttributeValue;
     }
 }
